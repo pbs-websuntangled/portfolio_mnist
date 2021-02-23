@@ -1,0 +1,153 @@
+<!-- 
+Took the base from here:
+https://github.com/mbr/flask-bootstrap/blob/master/flask_bootstrap/templates/bootstrap/base.html
+and modified it so I could understand it and 
+to bring it up to bootstrap 4
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Student_portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--
+     super() means add to the styles area rather than replace it
+     also, commenting out super() doesn't work!!
+-->
+
+    <link rel="shortcut icon" href="/static/favicon.ico">
+    <!-- Bootstrap 4 -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+
+    <!-- https://material.io/resources/icons/?style=baseline -->
+    <!-- https://google.github.io/material-design-icons/ -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        .material-icons {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            vertical-align: middle;
+        }
+    </style>
+
+    <!-- End the styles block -->
+
+</head>
+
+<body class="bg-light">
+
+
+
+
+
+
+    <head>
+        <title>Neural Net From Scratch</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <script>
+        function load_main() {
+            main();
+        }
+        window.onload = load_main;
+    </script>
+
+    <div class="container mt-2">
+
+        <div id="forwardPropagate" style="display:block ;">
+            <h2>Hand drawn digit</h2>
+            <p id="thisCharacter"></p>
+
+
+            <div>
+                <h2>Decoded digit</h2>
+                <table class="table">
+                    <tr>
+                        <td class="results">Truth</td>
+                        <td class="results">Classified by neural net as</td>
+                    </tr>
+                    <tr>
+                        <td class="results">
+                            <h1 class="display-1">
+                                <div id="thisCharacterTruth"></div>
+                            </h1>
+                        </td>
+
+                        <td id="thisCharacterClassificationAnalogTd" class="results">
+                            <h1 class="display-1">
+                                <div id="thisCharacterClassificationAnalog"></div>
+                            </h1>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td class="results">Correct</td>
+                        <td id="analogClassifierPercentageCorrect" class="results"></td>
+                    </tr>
+
+                </table>
+            </div>
+
+            <div class="slide_container">
+                <br>
+                <h2>Time between characters</h2>
+                <input type="range" min="0" max="5000" value="2500" class="slider" id="time_interval_range">
+                <p>Value: <span id="time_interval"></span> milliseconds</p>
+
+                <script>
+                    var slider = document.getElementById("time_interval_range");
+                    var output = document.getElementById("time_interval");
+                    output.innerHTML = slider.value;
+
+                    slider.oninput = function () {
+                        output.innerHTML = this.value;
+
+                        time_interval = this.value * 1;
+                    }
+                </script>
+            </div>
+        </div>
+
+        <script src="matrix.js"></script>
+        <script src=mnistDigit.js></script>
+        <script src=index.js></script>
+        <script src=neuralNet.js></script>
+        <script src=mnistDynamicLoad.js></script>
+        <script src=preTrainedMnist.js></script>
+        <script src=mnistData_mnist_test_0.js></script>
+        <script src=returnElementsOf_MnistAnalogClassifier06.js></script>
+
+    </div>
+
+
+
+
+
+
+    <!--
+     super() means add to the styles area rather than replace it
+     also, commenting out super() doesn't work!!
+-->
+
+
+    <!-- End the block-->
+
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+body {
+    font-family: Arial, Helvetica, sans-serif
+}
+
+table.character {
+    border: 2px solid black;
+    table-layout: fixed;
+}
+
+td.characterPixel {
+    border: 1px solid lightgray;
+    margin: 0;
+    padding: 0;
+    border-spacing: 0px;
+    border-width: 0px;
+    height: 10px;
+    width: 10px;
+    font-size: xx-small;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+td.results {
+    width: calc(100%/5);
+    text-align: center;
+    border: 1px solid black;
+}
+
+td.correct {
+    background-color: lightgreen
+}
+
+td.inCorrect {
+    background-color: lightpink
+}
+
+input.arrow {
+    font-size: xx-large;
+}
+
+button.arrow {
+    font-size: xx-large;
+}
+
+td.arrow {
+    font-size: xx-large;
+}
